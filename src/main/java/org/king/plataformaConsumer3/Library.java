@@ -12,10 +12,14 @@ public class Library {
     }
     public ArrayList<String> greetAll(String name) {
         org.king.plataforma.Library plataforma = new org.king.plataforma.Library();
+        org.king.plataformaConsumer1.Library plataformaConsumer1 = new org.king.plataformaConsumer1.Library();
         ArrayList<String> result = plataforma.greetAll(name);
         for (int i = 0; i < result.size(); i++) {
             result.set(i, "Via plataforma: " + result.get(i));
         }
+        result.add(greet6(name));
+        result.add(greet(name));
+        result.add(plataformaConsumer1.greet(name));
         return result;
     }
 
@@ -23,24 +27,34 @@ public class Library {
         org.king.plataforma.Library plataforma = new org.king.plataforma.Library();
         return plataforma.greet(name);
     }
-    public String greet(String name) {
-        return "Hello from plataforma-consumer-3, " + name + "!";
+    public String greetPlataformaConsumer1(String name) {
+        org.king.plataformaConsumer1.Library plataformaConsumer1 = new org.king.plataformaConsumer1.Library();
+        return plataformaConsumer1.greet(name);
     }
-
+    public String greet(String name) {
+        return "Hallo from plataforma-consumer-3, " + name + "!";
+    }
     public String greet1(String name) {
         org.king.plataforma.Library plataforma = new org.king.plataforma.Library();
         return "Via plataforma: " + plataforma.greet1(name);
     }
     public String greet2(String name) {
         org.king.plataforma.Library plataforma = new org.king.plataforma.Library();
-        return "Via plataforma: " + plataforma.greet2(name);    }
+        return "Via plataforma: " + plataforma.greet2(name);    
+    }
     public String greet3(String name) {
         org.king.plataforma.Library plataforma = new org.king.plataforma.Library();
-        return "Via plataforma: " + plataforma.greet3(name);    }
+        return "Via plataforma: " + plataforma.greet3(name);    
+    }
     public String greet4(String name) {
         org.king.plataforma.Library plataforma = new org.king.plataforma.Library();
-        return "Via plataforma: " + plataforma.greet4(name);    }
+        return "Via plataforma: " + plataforma.greet4(name);    
+    }
     public String greet5(String name) {
         org.king.plataforma.Library plataforma = new org.king.plataforma.Library();
-        return "Via plataforma: " + plataforma.greet5(name);    }
+        return "Via plataforma: " + plataforma.greet5(name);    
+    }
+    public String greet6(String name) {        
+        return "Hola, " + name + "!";    
+    }
 }

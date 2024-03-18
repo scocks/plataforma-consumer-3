@@ -21,19 +21,28 @@ class MainTest {
     void testGreetAll() {
         Library library = new Library();
         ArrayList<String> result = library.greetAll("plataforma-consumer-3");
-        assertEquals(6,result.size());
+        assertEquals(9,result.size());
         assertEquals("Via plataforma: Hello from plataforma, plataforma-consumer-3!", result.get(0));
-        assertEquals("Via plataforma: Hello, plataforma!", result.get(1));
-        assertEquals("Via plataforma: Greetings, plataforma!", result.get(2));
-        assertEquals("Via plataforma: Salutations, plataforma!", result.get(3));
-        assertEquals("Via plataforma: Hej, plataforma!", result.get(4));
-        assertEquals("Via plataforma: Kon'nichiwa, plataforma!", result.get(5));
+        assertEquals("Via plataforma: Hello, plataforma-consumer-3!", result.get(1));
+        assertEquals("Via plataforma: Greetings, plataforma-consumer-3!", result.get(2));
+        assertEquals("Via plataforma: Salutations, plataforma-consumer-3!", result.get(3));
+        assertEquals("Via plataforma: Hej, plataforma-consumer-3!", result.get(4));
+        assertEquals("Via plataforma: Kon'nichiwa, plataforma-consumer-3!", result.get(5));
+        assertEquals("Hola, plataforma-consumer-3!", result.get(6));
+        assertEquals("Hallo from plataforma-consumer-3, plataforma-consumer-3!", result.get(7));
+        assertEquals("Bonjour from plataforma-consumer-1, plataforma-consumer-3!", result.get(8));
+    }
+    @Test
+    void testGreetPlataformaConsumer1() {
+        org.king.plataformaConsumer1.Library library = new org.king.plataformaConsumer1.Library();
+        String result = library.greet("plataforma-consumer-3");
+        assertEquals("Bonjour from plataforma-consumer-1, plataforma-consumer-3!", result);
     }
     @Test
     void testGreet() {
         Library library = new Library();
         String result = library.greet("plataforma-consumer-3");
-        assertEquals("Hello from plataforma-consumer-3, plataforma-consumer-3!", result);
+        assertEquals("Hallo from plataforma-consumer-3, plataforma-consumer-3!", result);
     }
     @Test
     void testGreet1() {
@@ -64,5 +73,11 @@ class MainTest {
         Library library = new Library();
         String result = library.greet5("plataforma-consumer-3");
         assertEquals("Via plataforma: Kon'nichiwa, plataforma-consumer-3!", result);
+    }
+    @Test
+    void testGreet6() {
+        Library library = new Library();
+        String result = library.greet6("plataforma-consumer-3");
+        assertEquals("Hola, plataforma-consumer-3!", result);
     }
 }
